@@ -12,7 +12,7 @@ module.exports = {
         this.messageBus = messageBus;
         this.configuration = configuration;
         this.someparam = this.configuration.someparam;
-        //console.log(this.someparam);
+        console.log(this.someparam);
         
         setInterval(() => {
 
@@ -36,7 +36,7 @@ module.exports = {
              }
             ]);
             if (this.shouldStop === false) {
-                //console.log("publishing message from sensor");
+                console.log("publishing message from sensor");
                 this.messageBus.publish({
                     properties: {
                         'source': 'sensor',
@@ -55,6 +55,6 @@ module.exports = {
 
     destroy: function () {
         this.shouldStop = true;
-        //console.log('sensor.destroy');
+        console.log('sensor.destroy');
     }
 };
