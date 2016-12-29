@@ -1,0 +1,32 @@
+{
+  "modules": [
+    {
+      "name": "logger",
+      "loader": {
+        "name": "native",
+        "entrypoint": {
+          "module.path": "logger.dll"
+        }
+      },
+      "args": {
+        "filename": "log.txt"
+      }
+    },
+    {
+      "name": "node_sensor",
+      "loader": {
+        "name": "node",
+        "entrypoint": {
+          "main.path": "./node/sensor.js"
+        }
+      },
+      "args": { "someparam" : "c:\\\\" }
+    }
+  ],
+  "links": [
+    {
+      "source": "node_sensor",
+      "sink": "logger"
+    }
+  ]
+}
